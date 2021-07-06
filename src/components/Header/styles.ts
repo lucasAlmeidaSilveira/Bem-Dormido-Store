@@ -28,7 +28,8 @@ export const Container = styled.header`
       text-transform: uppercase;
       font-size: 1.6rem;
       font-weight: 700;
-      padding: .8rem 1.35rem;
+      padding: .8rem 1.5rem;
+      border-radius: 57px;
 
       transition: all .2s ease;
 
