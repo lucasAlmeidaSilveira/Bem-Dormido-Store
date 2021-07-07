@@ -4,8 +4,18 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --bg: linear-gradient(106.98deg, #007bb4 37.6%, #00a3ff 99.59%);
     --blue: #007bb4;
+    --green: #2CC8A7
     --yellow: #f3cc30;
+    --red: #AA0000;
+    --red-40: rgba(170, 0, 0, 0.4);
+
     --white: #f5fcff;
+
+    --gray-20: rgba(196, 196, 196, 0.2);
+    --gray-50: #D8E3E7;
+    --gray-90: #526475;
+
+    --black: #061B2E;    
   }
 
   *{

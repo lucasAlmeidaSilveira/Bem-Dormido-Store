@@ -9,30 +9,26 @@ export const Container = styled.main`
 
 export const Content = styled.section`
   max-width: 1120px;
+  height: calc(95vh - 125.42px);
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 100%;
 
   img {
-    height: 95%;
-
-    transition: transform 0.2s ease;
-    &:hover {
-      transform: scale(1.01);
-    }
+    height: 100%
   }
 `;
 
 export const ContentBanner = styled.div`
   text-align: right;
-  height: 41rem;
+
 
   p {
     color: var(--white);
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 2rem;
   }
 `;

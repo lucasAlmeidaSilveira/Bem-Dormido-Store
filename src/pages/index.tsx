@@ -1,4 +1,5 @@
 import Head from 'next/head'
+
 import { Container, Content, Title, Slogan, ContentBanner, Button } from './home';
 import { GlobalStyle } from '../styles/global';
 
