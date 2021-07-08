@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-  max-width: 1260px;
-  height: 1384px;
+  width: min(1260px, 90%);
+  border-radius: 3rem;
   margin: 0 auto;
   padding: 5rem;
   background: var(--white);
@@ -18,8 +18,9 @@ export const Container = styled.main`
 
     color: var(--white);
     text-transform: uppercase;
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 2.4rem, 1.6rem);
   }
+
 `;
 
 export const BoxSlider = styled.section`
@@ -27,11 +28,12 @@ export const BoxSlider = styled.section`
   align-items: center;
   justify-content: space-between;
 
-  margin-top: 4rem;
+  height: 63.6rem;
 
-  div:nth-child(1) {
+  div.d-none {
     margin-right: 8.4rem;
   }
+
 `;
 
 export const ImageProduct = styled.div`
@@ -74,7 +76,10 @@ export const InfoProduct = styled.div`
   }
 
   .amount {
-    display: inline-block;
+    /* display: inline-block; */
+    display: flex;
+    flex-direction: column;
+
     div {
       width: 12.4rem;
       height: 5rem;
@@ -150,7 +155,7 @@ export const InfoProduct = styled.div`
         &:hover {
           background: var(--blue);
           color: var(--white);
-          filter: brightness(1.3);
+          filter: brightness(1.2);
         }
       }
     }
@@ -204,7 +209,7 @@ export const InfoProduct = styled.div`
         &:hover {
           background: var(--blue);
           color: var(--white);
-          filter: brightness(1.3);
+          filter: brightness(1.2);
 
           transform: scale(1.1);
         }
@@ -215,4 +220,69 @@ export const InfoProduct = styled.div`
       }
     }
   }
+
+  .addtional-info{
+    width: 100%;
+    padding: 1.2rem;
+
+    background: var(--gray-20);
+
+    .order{
+      margin-bottom: 3.145rem;
+
+      p{
+        font-family: 'Open sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: var(--black);
+        
+
+        img{
+          margin-left: .925rem;
+        }
+
+        & + p{
+          font-weight: 400;
+
+          color: var(--gray-90)
+        }
+
+        span{
+          font-weight: 600;
+        }
+      }
+    }
+
+    .payment{
+      p{
+        font-family: 'Open sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: var(--black);
+      }
+    }
+  }
 `;
+
+export const Description = styled.article`
+  padding: 4.6rem 6.9rem;
+  background: var(--gray-20);
+  margin-top: 6rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+    padding: 1rem;
+
+    div + div{
+      margin-top: 4rem;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+`

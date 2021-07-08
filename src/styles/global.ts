@@ -23,10 +23,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body{
-    background: no-repeat url('/images/curvas.svg'), var(--bg) fixed;
+    background: repeat-y url('/images/curvas.svg'), var(--bg);
     background-size: cover;
-    -webkit-font-smoothing: antialiased;
+    background-attachment: fixed;
     height: 100vh;
+    -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button{
@@ -40,6 +41,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%; /* 10px */
+    scroll-behavior: smooth;
   }
 
   button{
@@ -54,7 +56,7 @@ export const GlobalStyle = createGlobalStyle`
     opacity: .6;
     cursor: not-allowed;
   }
-
+  
   .sr-only {
   position: absolute;
   width: 1px;
@@ -66,4 +68,16 @@ export const GlobalStyle = createGlobalStyle`
   white-space: nowrap;
   border-width: 0;
 }
+
+@media (max-width: 375px) {
+    /* div {
+      align-items: center;
+      justify-content: center;
+    } */
+
+    .d-none {
+      display: none;
+      visibility: hidden;
+    }
+  }
 `;
