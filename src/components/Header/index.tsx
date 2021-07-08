@@ -1,11 +1,12 @@
 import { Container } from './styles';
-import logoImg from '../../assets/logo.svg'
 
 export function Header() {
   return (
     <Container>
       <div>
-        <img src={logoImg} alt='Logo Bem Dormido Store' />
+        <a href="/">
+          <img src='/images/logo.svg' alt='Logo Bem Dormido Store' />
+        </a>
       </div>
       <nav>
         <div>

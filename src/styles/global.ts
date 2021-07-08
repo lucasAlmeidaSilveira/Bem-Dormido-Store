@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import curvasImg from '../assets/curvas.svg'
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -24,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body{
-    background: no-repeat url(${curvasImg}), var(--bg) fixed;
+    background: no-repeat url('/images/curvas.svg'), var(--bg) fixed;
     background-size: cover;
     -webkit-font-smoothing: antialiased;
     height: 100vh;
