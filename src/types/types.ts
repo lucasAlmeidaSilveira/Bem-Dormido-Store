@@ -1,8 +1,10 @@
 export interface HomeProps {
   product: {
     priceId: string;
-    name: string;
-    img: string;
+    info: {
+      name: string;
+      images: string[];
+    };
     amount: number;
   };
 }

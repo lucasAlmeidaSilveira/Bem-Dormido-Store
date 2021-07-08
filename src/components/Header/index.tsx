@@ -1,4 +1,5 @@
 import { Container } from './styles';
+import { SignInButton } from '../SignInButton'
 
 export function Header() {
   return (
@@ -14,6 +15,7 @@ export function Header() {
           <a href='/products'>Produtos</a>
           <a href='/gallery'>Galeria</a>
           <a href='/contact'>Contato</a>
+          <SignInButton />
         </div>
       </nav>
     </Container>

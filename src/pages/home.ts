@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.main`
   width: 100vw;
-  height: calc(100vh - 125.42px);
+  height: calc(100vh - 126.42px);
   background: url('/images/nuvem.svg') left no-repeat;
   background-size: contain;
 `;
 
 export const Content = styled.section`
-  max-width: 1120px;
+  width: min(1260px, 90%);
   height: calc(95vh - 125.42px);
   margin: 0 auto;
 

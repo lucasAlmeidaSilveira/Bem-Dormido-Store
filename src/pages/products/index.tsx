@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import { HomeProps } from '../../types/types';
@@ -28,12 +28,12 @@ export default function Products({ product }: HomeProps) {
 
         <BoxSlider>
           <ImageProduct className='d-none'>
-            <img src={product.img[0]} alt='Pijama Kigurumi Panda Infantil' />
+            <img src={product.info.images[0]} alt='Pijama Kigurumi Panda Infantil' />
           </ImageProduct>
 
           <InfoProduct>
             <div className='title'>
-              <h2>{product.name}</h2>
+              <h2>{product.info.name}</h2>
               <h4>Pijama Kigurumi</h4>
             </div>
             <div className='amount'>
@@ -109,15 +109,14 @@ export default function Products({ product }: HomeProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const price = await stripe.prices.retrieve('price_1JA5gUGXulBgx6dwDzNsE1FB', {
     expand: ['product'],
   });
 
   const product = {
     priceId: price.id,
-    name: price.product.name,
-    img: price.product.images,
+    info: price.product,
     amount: price.unit_amount,
   };
 
@@ -125,5 +124,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       product,
     },
+
+    revalidate: 60 * 60 * 24, // 24 hours
   };
 };
