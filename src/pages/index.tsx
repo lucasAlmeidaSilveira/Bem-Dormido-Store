@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import { Container, Content, Title, Slogan, ContentBanner, Button } from './home';
 import { GlobalStyle } from '../styles/global';
+import bannerImg from '../assets/Foto.svg'
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
 
     <Container>
       <Content>
-          <img src="/assets/Foto.svg" alt="Pijama Kigurumi" />
+          <img src={bannerImg} alt="Pijama Kigurumi" />
 
         <ContentBanner>
           <Slogan>

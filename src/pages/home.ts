@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import nuvemImg from '../assets/nuvem.svg'
 
 export const Container = styled.main`
   width: 100vw;
   height: calc(100vh - 125.42px);
-  background: url('/assets/nuvem.svg') left no-repeat;
+  background: url(${nuvemImg}) left no-repeat;
   background-size: contain;
 `;
 
