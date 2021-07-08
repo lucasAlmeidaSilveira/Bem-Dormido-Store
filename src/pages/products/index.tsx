@@ -1,5 +1,9 @@
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
+
+import { HomeProps } from '../../types/types';
 import { AddToCart } from '../../components/AddToCart';
+import { stripe } from '../../services/stripe';
 import {
   BoxSlider,
   Container,
@@ -8,7 +12,11 @@ import {
   InfoProduct,
 } from './style';
 
-export default function Products() {
+export default function Products({ product }: HomeProps) {
+  const amount = {
+    real: product.amount.toString().substr(0, 2),
+    cents: product.amount.toString().substr(2, 2),
+  };
   return (
     <>
       <Head>
@@ -20,22 +28,19 @@ export default function Products() {
 
         <BoxSlider>
           <ImageProduct className='d-none'>
-            <img
-              src='/images/photos/panda-infantil.png'
-              alt='Pijama Kigurumi Panda Infantil'
-            />
+            <img src={product.img[0]} alt='Pijama Kigurumi Panda Infantil' />
           </ImageProduct>
 
           <InfoProduct>
             <div className='title'>
-              <h2>Panda</h2>
+              <h2>{product.name}</h2>
               <h4>Pijama Kigurumi</h4>
             </div>
             <div className='amount'>
               <div>
                 <small>R$</small>
-                <h3>89</h3>
-                <small>,90</small>
+                <h3>{amount.real}</h3>
+                <small>,{amount.cents}</small>
               </div>
               <p>
                 ou <span>12x de R$9,87 no cartão</span>
@@ -85,17 +90,40 @@ export default function Products() {
           </InfoProduct>
         </BoxSlider>
 
-        <Description id="description">
+        <Description id='description'>
           <div>
-            <img src="/images/pijama-medidas.svg" alt="Medidas do Pijama" />
+            <img src='/images/pijama-medidas.svg' alt='Medidas do Pijama' />
           </div>
 
           <div>
-            <img src="/images/tabela-medidas.svg" alt="Tabela de Medidas" />
+            <img src='/images/tabela-medidas.svg' alt='Tabela de Medidas' />
           </div>
         </Description>
       </Container>
-      <br /><br /><br /><br /><br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const price = await stripe.prices.retrieve('price_1JA5gUGXulBgx6dwDzNsE1FB', {
+    expand: ['product'],
+  });
+
+  const product = {
+    priceId: price.id,
+    name: price.product.name,
+    img: price.product.images,
+    amount: price.unit_amount,
+  };
+
+  return {
+    props: {
+      product,
+    },
+  };
+};
