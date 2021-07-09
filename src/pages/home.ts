@@ -17,13 +17,12 @@ export const Content = styled.section`
   justify-content: space-around;
 
   img {
-    height: 100%
+    height: 100%;
   }
 `;
 
 export const ContentBanner = styled.div`
   text-align: right;
-
 
   p {
     color: var(--white);
@@ -90,6 +89,8 @@ export const Button = styled.a`
   color: var(--blue);
   text-transform: uppercase;
   font-weight: 700;
+
+  cursor: pointer;
 
   transition: background 0.2s ease;
 

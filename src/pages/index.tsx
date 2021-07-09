@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link'
 
 import {
   Container,
@@ -35,7 +36,7 @@ export default function Home() {
               Pijamas para tornar sua noite mais <br />
               confortável, quentinha, e bem dormida.
             </p>
-            <Button href='/produtos'>Confira</Button>
+            <Link href='/products'><Button>Confira</Button></Link>
           </ContentBanner>
         </Content>
       </Container>

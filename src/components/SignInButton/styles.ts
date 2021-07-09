@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ButtonSignIn = styled.button`
   background: var(--blue);
+  height: 3.5rem;
   padding: 0.8rem 1.7rem;
   display: flex !important;
   align-items: center;
@@ -21,7 +22,10 @@ export const ButtonSignIn = styled.button`
   }
 
   img {
-    width: 3.133rem !important;
+    height: 2rem;
     margin-right: 0.9rem;
+    &#user-image {
+      border-radius: 100%;
+    }
   }
 `;

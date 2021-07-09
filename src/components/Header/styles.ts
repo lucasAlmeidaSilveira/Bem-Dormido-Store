@@ -13,7 +13,7 @@ export const Container = styled.header`
   font-size: 1.6rem;
   font-weight: 700;
 
-  div img {
+  div img#logo {
     width: 14.5rem;
     cursor: pointer;
 
