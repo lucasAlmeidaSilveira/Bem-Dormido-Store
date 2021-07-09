@@ -1,14 +1,27 @@
+import Link from 'next/link'
+import Modal from 'react-modal'
+import { useState } from 'react';
 import { Container } from './styles';
 import { SignInButton } from '../SignInButton'
-import Link from 'next/link'
+
+Modal.setAppElement('#__next')
 
 export function Header() {
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+
+  function handleOpenLoginModal() {
+    setIsLoginModalOpen(true);
+  }
+  function handleCloseLoginModal() {
+    setIsLoginModalOpen(false);
+  }
+
   return (
     <Container>
       <div>
-        <a href="/">
+        <Link href="/">
           <img id="logo" src='/images/logo.svg' alt='Logo Bem Dormido Store' />
-        </a>
+        </Link>
       </div>
       <nav>
         <div>
@@ -16,9 +29,17 @@ export function Header() {
           <Link href='/products'>Produtos</Link>
           <Link href='/gallery'>Galeria</Link>
           <Link href='/contact'>Contato</Link>
-          <SignInButton />
+          <SignInButton onOpenLoginModal={handleOpenLoginModal} />
         </div>
       </nav>
+
+      <Modal 
+        isOpen={isLoginModalOpen} 
+        onRequestClose={handleCloseLoginModal}
+      >
+        <h2>Crie sua conta</h2>
+      </Modal>
+
     </Container>
   );
 }
