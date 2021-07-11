@@ -3,13 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.main`
   width: 100vw;
   height: calc(100vh - 126.42px);
-  background: url('/images/nuvem.svg') left bottom no-repeat;
-  background-size: contain;
+  background: url('/images/nuvem.svg') left bottom/contain no-repeat;
 `;
 
 export const Content = styled.section`
   width: min(1260px, 90%);
-  height: calc(95vh - 125.42px);
+  height: 100%;
   margin: 0 auto;
 
   display: flex;
@@ -17,11 +16,16 @@ export const Content = styled.section`
   justify-content: space-around;
 
   img {
-    height: 100%;
+    object-fit: contain;
   }
 `;
 
 export const ContentBanner = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  
   text-align: right;
 
   p {
@@ -36,7 +40,6 @@ export const Slogan = styled.div`
   position: relative;
   height: 12rem;
   margin-top: -20px;
-  margin-bottom: 2rem;
 
   text-transform: uppercase;
   font-weight: 700;
@@ -68,7 +71,7 @@ export const Title = styled.div`
     font-size: 5.9rem;
     color: var(--white);
     text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.6);
-    line-height: 32px;
+    margin-bottom: -2rem;
   }
 
   h1 {
@@ -80,6 +83,7 @@ export const Title = styled.div`
 
 export const Button = styled.a`
   margin-top: 1.8rem;
+  align-self: flex-end;
   display: inline-block;
   padding: 0.8rem 4rem;
   border-radius: 57px;
