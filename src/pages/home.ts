@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.main`
   width: 100vw;
   height: calc(100vh - 126.42px);
-  background: url('/images/nuvem.svg') left no-repeat;
+  background: url('/images/nuvem.svg') left bottom no-repeat;
   background-size: contain;
 `;
 
