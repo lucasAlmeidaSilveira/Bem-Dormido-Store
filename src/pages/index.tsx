@@ -8,7 +8,7 @@ import {
   Slogan,
   ContentBanner,
   Button,
-} from './home';
+} from '../styles/home';
 import { GlobalStyle } from '../styles/global';
 
 export default function Home() {

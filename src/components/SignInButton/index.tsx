@@ -1,5 +1,5 @@
 import { ButtonSignIn } from './styles';
-import { signIn, signOut, useSession } from 'next-auth/client';
+import { signOut, useSession } from 'next-auth/client';
 
 interface SignInButtonProps {
   onOpenLoginModal: () => void;

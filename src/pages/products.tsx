@@ -1,16 +1,16 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { HomeProps } from '../../types/types';
-import { AddToCart } from '../../components/AddToCart';
-import { stripe } from '../../services/stripe';
+import { HomeProps } from '../types/types';
+import { AddToCart } from '../components/AddToCart';
+import { stripe } from '../services/stripe';
 import {
   BoxSlider,
   Container,
   Description,
   ImageProduct,
   InfoProduct,
-} from './style';
+} from '../styles/products';
 
 export default function Products({ product }: HomeProps) {
   const amount = {
