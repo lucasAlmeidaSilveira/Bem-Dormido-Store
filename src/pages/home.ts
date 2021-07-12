@@ -16,7 +16,7 @@ export const Content = styled.section`
   justify-content: space-around;
 
   img {
-    object-fit: contain;
+    height: 100%;
   }
 `;
 

@@ -69,6 +69,43 @@ export const GlobalStyle = createGlobalStyle`
   border-width: 0;
 }
 
+/* ========== MODAL ========== */
+
+.react-modal-overlay{
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.react-modal-content{
+    width: calc(min(100%, 576px));
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--white);
+    position: relative;
+    border-radius: 2rem;
+  }
+  .react-modal-close{
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    border: 0;
+    background: transparent;
+    transition: filter .2s ease;
+
+    svg{
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
 @media (max-width: 375px) {
     /* div {
       align-items: center;

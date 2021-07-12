@@ -1,9 +1,6 @@
 import Link from 'next/link';
-import Modal from 'react-modal';
-import { useState } from 'react';
 import { Container } from './styles';
 import { SignInButton } from '../SignInButton';
-import { LoginModal } from '../LoginModal';
 
 interface HeaderProps {
   onOpenLoginModal: () => void;
