@@ -31,5 +31,11 @@ export const ButtonCart = styled.div`
       background: var(--gray-50);
       margin-top: 0 !important;
     }
+
+    svg{
+      width: 25px;
+      height: 25px;
+      color: var(--blue);
+    }
   }
 `;

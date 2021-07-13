@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BoxCart, Container } from './styles';
+import { FaShoppingCart } from 'react-icons/fa'
 import { SignInButton } from '../SignInButton';
 
 interface HeaderProps {
@@ -34,7 +35,7 @@ export function Header({ onOpenLoginModal }: HeaderProps) {
             <SignInButton onOpenLoginModal={onOpenLoginModal} />
           </li>
           <BoxCart>
-            <img src='/images/cart.svg' alt='Carrinho de compras' />
+            <FaShoppingCart />
           </BoxCart>
         </ul>
       </nav>

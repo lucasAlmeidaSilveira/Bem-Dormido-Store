@@ -53,7 +53,7 @@ export const BoxCart = styled.button`
   border: none;
   height: 3.5rem;
   width: 6rem;
-  padding-right: 1.1rem;
+  padding-right: 1.3rem;
   position: absolute;
   bottom: 0;
   right: -40px;
@@ -64,5 +64,11 @@ export const BoxCart = styled.button`
   transition: filter .2s ease;
   &:hover{
     filter: brightness(1.1)
+  }
+
+  svg{
+    width: 20px;
+    height:20px;
+    color: var(--white);
   }
 `;

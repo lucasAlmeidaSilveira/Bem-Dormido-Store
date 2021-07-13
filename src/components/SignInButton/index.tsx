@@ -1,6 +1,6 @@
 import { ButtonSignIn, SubMenu } from './styles';
 import { signOut, useSession } from 'next-auth/client';
-import { IoCloseCircleOutline, IoListCircleOutline } from 'react-icons/io5';
+import { IoListCircleOutline, IoLogOutOutline } from 'react-icons/io5';
 
 interface SignInButtonProps {
   onOpenLoginModal: () => void;
@@ -15,7 +15,7 @@ export function SignInButton({ onOpenLoginModal }: SignInButtonProps) {
       <span>Sua conta</span>
       <SubMenu>
         <li><IoListCircleOutline />Pedidos</li>
-        <li onClick={() => signOut()}><IoCloseCircleOutline />Sair</li>
+        <li onClick={() => signOut()}><IoLogOutOutline />Sair</li>
       </SubMenu>
     </ButtonSignIn>
   ) : (

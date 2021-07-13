@@ -1,3 +1,4 @@
+import { FaCartPlus } from 'react-icons/fa';
 import { ButtonCart } from './styles';
 
 export function AddToCart() {
@@ -5,7 +6,7 @@ export function AddToCart() {
     <ButtonCart>
       <div>Comprar agora</div>
       <div>
-        <img src='/images/cart.svg' alt='Adicionar ao carrinho' />
+        <FaCartPlus />
       </div>
     </ButtonCart>
   );

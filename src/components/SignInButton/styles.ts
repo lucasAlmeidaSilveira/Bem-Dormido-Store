@@ -62,10 +62,10 @@ export const SubMenu = styled.ul`
     justify-content: center;
     padding: 0.8rem 0;
     transition: filter 0.2s ease;
+    background: var(--blue);
   }
 
   li:hover {
-    background: var(--blue);
     filter: brightness(0.9);
   }
 
