@@ -32,10 +32,6 @@ export const Container = styled.header`
       padding-left: 3.5rem;
     }
 
-    & > li:last-of-type {
-      margin-right: -20px;
-    }
-
     a {
       color: var(--white);
 
@@ -60,6 +56,7 @@ export const BoxCart = styled.button`
   height: 3.5rem;
   width: 6rem;
   padding-right: 1.3rem;
+  margin-left: -20px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
