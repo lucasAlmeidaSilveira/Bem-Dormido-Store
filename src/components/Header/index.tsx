@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container } from './styles';
+import { BoxCart, Container } from './styles';
 import { SignInButton } from '../SignInButton';
 
 interface HeaderProps {
@@ -15,15 +15,28 @@ export function Header({ onOpenLoginModal }: HeaderProps) {
         </Link>
       </div>
       <nav>
-        <div>
-          <Link href='/'>
-            <a className='active'>Home</a>
-          </Link>
-          <Link href='/products'>Produtos</Link>
-          <Link href='/gallery'>Galeria</Link>
-          <Link href='/contact'>Contato</Link>
-          <SignInButton onOpenLoginModal={onOpenLoginModal} />
-        </div>
+        <ul>
+          <li>
+            <Link href='/'>
+              <a className='active'>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href='/products'>Produtos</Link>
+          </li>
+          <li>
+            <Link href='/gallery'>Galeria</Link>
+          </li>
+          <li>
+            <Link href='/contact'>Contato</Link>
+          </li>
+          <li>
+            <SignInButton onOpenLoginModal={onOpenLoginModal} />
+          </li>
+          <BoxCart>
+            <img src='/images/cart.svg' alt='Carrinho de compras' />
+          </BoxCart>
+        </ul>
       </nav>
     </Container>
   );

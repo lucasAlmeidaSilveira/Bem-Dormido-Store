@@ -1,5 +1,6 @@
-import { ButtonSignIn } from './styles';
+import { ButtonSignIn, SubMenu } from './styles';
 import { signOut, useSession } from 'next-auth/client';
+import { IoCloseCircleOutline, IoListCircleOutline } from 'react-icons/io5';
 
 interface SignInButtonProps {
   onOpenLoginModal: () => void;
@@ -9,15 +10,19 @@ export function SignInButton({ onOpenLoginModal }: SignInButtonProps) {
   const [session] = useSession();
 
   return session ? (
-    <ButtonSignIn type='button' onClick={() => signOut()}>
+    <ButtonSignIn type='button'>
       <img id='user-image' src={session.user.image} alt='Conta' />
-      Sua conta
+      <span>Sua conta</span>
+      <SubMenu>
+        <li><IoListCircleOutline />Pedidos</li>
+        <li onClick={() => signOut()}><IoCloseCircleOutline />Sair</li>
+      </SubMenu>
     </ButtonSignIn>
   ) : (
     <>
       <ButtonSignIn type='button' onClick={onOpenLoginModal}>
         <img src='/images/nuvem-login.svg' alt='Login' />
-        Login
+        <span>Login</span>
       </ButtonSignIn>
     </>
   );

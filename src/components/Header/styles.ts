@@ -23,9 +23,12 @@ export const Container = styled.header`
     }
   }
 
-  nav > div {
+  nav > ul {
     display: flex;
+    align-items: center;
+    list-style: none;
     gap: 3.5rem;
+    position: relative;
 
     a {
       color: var(--white);
@@ -41,5 +44,25 @@ export const Container = styled.header`
         background: var(--yellow);
       }
     }
+  }
+`;
+
+export const BoxCart = styled.button`
+  background: var(--yellow);
+  border-radius: 0 5rem 5rem 0;
+  border: none;
+  height: 3.5rem;
+  width: 6rem;
+  padding-right: 1.1rem;
+  position: absolute;
+  bottom: 0;
+  right: -40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  transition: filter .2s ease;
+  &:hover{
+    filter: brightness(1.1)
   }
 `;
