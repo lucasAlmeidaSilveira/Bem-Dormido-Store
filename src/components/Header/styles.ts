@@ -27,10 +27,13 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     list-style: none;
-    position: relative;
-    
-    & > li + li{
+
+    & > li + li {
       padding-left: 3.5rem;
+    }
+
+    & > li:last-of-type {
+      margin-right: -20px;
     }
 
     a {
@@ -57,21 +60,18 @@ export const BoxCart = styled.button`
   height: 3.5rem;
   width: 6rem;
   padding-right: 1.3rem;
-  position: relative;
-  bottom: 0;
-  right: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
-  transition: filter .2s ease;
-  &:hover{
-    filter: brightness(1.1)
+  transition: filter 0.2s ease;
+  &:hover {
+    filter: brightness(1.1);
   }
 
-  svg{
+  svg {
     width: 20px;
-    height:20px;
+    height: 20px;
     color: var(--white);
   }
 `;
