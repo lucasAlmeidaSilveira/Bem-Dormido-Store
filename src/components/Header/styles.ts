@@ -27,8 +27,11 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 3.5rem;
     position: relative;
+    
+    & > li + li{
+      padding-left: 3.5rem;
+    }
 
     a {
       color: var(--white);
@@ -54,9 +57,9 @@ export const BoxCart = styled.button`
   height: 3.5rem;
   width: 6rem;
   padding-right: 1.3rem;
-  position: absolute;
+  position: relative;
   bottom: 0;
-  right: -40px;
+  right: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
