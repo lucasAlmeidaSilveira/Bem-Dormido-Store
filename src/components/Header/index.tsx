@@ -3,10 +3,7 @@ import { BoxCart, Container } from './styles';
 import { FaShoppingCart } from 'react-icons/fa';
 import { SignInButton } from '../SignInButton';
 import { useSession } from 'next-auth/client';
-
-interface HeaderProps {
-  onOpenLoginModal: () => void;
-}
+import { HeaderProps } from '../../types/types';
 
 export function Header({ onOpenLoginModal }: HeaderProps) {
   const [session] = useSession();

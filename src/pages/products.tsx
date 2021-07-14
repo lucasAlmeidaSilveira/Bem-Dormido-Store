@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { HomeProps } from '../types/types';
+import { ProductsProps } from '../types/types';
 import { AddToCart } from '../components/AddToCart';
 import { stripe } from '../services/stripe';
 import {
@@ -12,7 +12,7 @@ import {
   InfoProduct,
 } from '../styles/products';
 
-export default function Products({ product }: HomeProps) {
+export default function Products({ product, onOpenLoginModal }: ProductsProps) {
   const amount = {
     real: product.amount.toString().substr(0, 2),
     cents: product.amount.toString().substr(2, 2),
@@ -28,7 +28,10 @@ export default function Products({ product }: HomeProps) {
 
         <BoxSlider>
           <ImageProduct className='d-none'>
-            <img src={product.info.images[0]} alt='Pijama Kigurumi Panda Infantil' />
+            <img
+              src={product.info.images[0]}
+              alt='Pijama Kigurumi Panda Infantil'
+            />
           </ImageProduct>
 
           <InfoProduct>
@@ -67,7 +70,10 @@ export default function Products({ product }: HomeProps) {
                 </a>
               </ul>
             </div>
-            <AddToCart />
+            <AddToCart
+              onOpenLoginModal={onOpenLoginModal}
+              priceId={product.priceId}
+            />
             <div className='addtional-info'>
               <div className='order'>
                 <p>
@@ -92,11 +98,19 @@ export default function Products({ product }: HomeProps) {
 
         <Description id='description'>
           <div>
-            <img src='/images/pijama-medidas.svg' alt='Medidas do Pijama' />
+            <img
+              draggable='false'
+              src='/images/pijama-medidas.svg'
+              alt='Medidas do Pijama'
+            />
           </div>
 
           <div>
-            <img src='/images/tabela-medidas.svg' alt='Tabela de Medidas' />
+            <img
+              draggable='false'
+              src='/images/tabela-medidas.svg'
+              alt='Tabela de Medidas'
+            />
           </div>
         </Description>
       </Container>

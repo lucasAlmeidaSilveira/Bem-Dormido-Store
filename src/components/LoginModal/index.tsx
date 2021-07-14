@@ -1,13 +1,9 @@
 import Modal from 'react-modal';
 import { FcGoogle } from 'react-icons/fc';
-import { IoClose } from 'react-icons/io5'
+import { IoClose } from 'react-icons/io5';
 import { signIn, signOut, useSession } from 'next-auth/client';
 import { BtnGoogle, Content, ContentFooter } from './styles';
-
-interface LoginModalProps {
-  isOpen: boolean;
-  onRequestClose: () => void;
-}
+import { LoginModalProps } from '../../types/types';
 
 export function LoginModal({ isOpen, onRequestClose }: LoginModalProps) {
   return (
@@ -29,17 +25,18 @@ export function LoginModal({ isOpen, onRequestClose }: LoginModalProps) {
         <h3>Criar conta</h3>
 
         <BtnGoogle type='button' onClick={() => signIn('google')}>
-          <FcGoogle />Cadastre-se com o Google
+          <FcGoogle />
+          Cadastre-se com o Google
         </BtnGoogle>
       </Content>
       <ContentFooter>
         <h4>Já possui uma conta?</h4>
 
         <BtnGoogle type='button' onClick={() => signIn('google')}>
-          <FcGoogle />Entrar com o Google
+          <FcGoogle />
+          Entrar com o Google
         </BtnGoogle>
       </ContentFooter>
-
     </Modal>
   );
 }

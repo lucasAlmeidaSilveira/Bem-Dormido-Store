@@ -22,10 +22,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <NextAuthProvider session={pageProps.session}>
-      <Header onOpenLoginModal={handleOpenLoginModal}/>
-      <Component {...pageProps} />
+      <Header onOpenLoginModal={handleOpenLoginModal} />
+      <Component onOpenLoginModal={handleOpenLoginModal} {...pageProps} />
 
-      <LoginModal isOpen={isLoginModalOpen} onRequestClose={handleCloseLoginModal} />
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onRequestClose={handleCloseLoginModal}
+      />
 
       <GlobalStyle />
     </NextAuthProvider>
