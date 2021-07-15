@@ -4,9 +4,11 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { SignInButton } from '../SignInButton';
 import { useSession } from 'next-auth/client';
 import { HeaderProps } from '../../types/types';
+import { useRouter } from 'next/router';
 
 export function Header({ onOpenLoginModal }: HeaderProps) {
   const [session] = useSession();
+  const { asPath } = useRouter();
 
   return (
     <Container>
@@ -19,17 +21,23 @@ export function Header({ onOpenLoginModal }: HeaderProps) {
         <ul>
           <li>
             <Link href='/'>
-              <a className='active'>Home</a>
+              <a className={asPath === '/' ? 'active' : ''}>Home</a>
             </Link>
           </li>
           <li>
-            <Link href='/products'>Produtos</Link>
+            <Link href='/products'>
+              <a className={asPath === '/products' ? 'active' : ''}>Produtos</a>
+            </Link>
           </li>
           <li>
-            <Link href='/gallery'>Galeria</Link>
+            <Link href='/gallery'>
+              <a className={asPath === '/gallery' ? 'active' : ''}>Galeria</a>
+            </Link>
           </li>
           <li>
-            <Link href='/contact'>Contato</Link>
+            <Link href='/contact'>
+              <a className={asPath === '/contact' ? 'active' : ''}>Contato</a>
+            </Link>
           </li>
           <li>
             <SignInButton onOpenLoginModal={onOpenLoginModal} />

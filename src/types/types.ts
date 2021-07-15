@@ -1,3 +1,6 @@
+import { LinkProps } from 'next/link';
+import { ReactElement } from 'react';
+
 export interface ProductsProps {
   product: {
     priceId: string;
@@ -37,31 +40,7 @@ export interface User {
   };
 }
 
-export interface StripeBuyProducts {
-  id: string,
-  object: string,
-  amount_subtotal: number,
-  amount_total: number,
-  currency: string,
-  description: string,
-  price: {
-    id: string,
-    object: string,
-    active: boolean,
-    billing_scheme: string,
-    created: number,
-    currency: string,
-    livemode: boolean,
-    lookup_key: string,
-    metadata: object,
-    nickname: string,
-    product: string,
-    recurring: string,
-    tiers_mode: string,
-    transform_quantity: number | string,
-    type: string,
-    unit_amount: number,
-    unit_amount_decimal: string,
-  },
-  quantity: number,
+export interface ActiveLinkProps extends LinkProps {
+  children: ReactElement;
+  activeClassName: string;
 }
