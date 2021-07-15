@@ -7,7 +7,7 @@ export interface ProductsProps {
     };
     amount: number;
   };
-  onOpenLoginModal: () => void
+  onOpenLoginModal: () => void;
 }
 
 export interface AddToCartProps {
@@ -30,9 +30,38 @@ export interface SignInButtonProps {
 
 export interface User {
   ref: {
-    id: string
-  }
+    id: string;
+  };
   data: {
-    stripe_customer_id: string
-  }
+    stripe_customer_id: string;
+  };
+}
+
+export interface StripeBuyProducts {
+  id: string,
+  object: string,
+  amount_subtotal: number,
+  amount_total: number,
+  currency: string,
+  description: string,
+  price: {
+    id: string,
+    object: string,
+    active: boolean,
+    billing_scheme: string,
+    created: number,
+    currency: string,
+    livemode: boolean,
+    lookup_key: string,
+    metadata: object,
+    nickname: string,
+    product: string,
+    recurring: string,
+    tiers_mode: string,
+    transform_quantity: number | string,
+    type: string,
+    unit_amount: number,
+    unit_amount_decimal: string,
+  },
+  quantity: number,
 }
