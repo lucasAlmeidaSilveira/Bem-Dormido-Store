@@ -2,7 +2,7 @@ import { query as q } from 'faunadb';
 import { fauna } from '../../../services/fauna';
 import { stripe } from '../../../services/stripe';
 
-export async function saveBuy(paymentIntentId: string, customerId: string) {
+export async function saveBuy(sessionId: string, customerId: string) {
   const userRef = await fauna.query(
     q.Select(
       'ref',
@@ -10,17 +10,18 @@ export async function saveBuy(paymentIntentId: string, customerId: string) {
     ),
   );
 
-  const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
+  const payment = await stripe.checkout.sessions.retrieve(sessionId, {
+    expand: ['line_items'],
+  });
 
   const paymentIntentData = {
-    id: paymentIntent.id,
+    id: sessionId,
+    products: payment.line_items.data,
     userId: userRef,
-    total: paymentIntent.amount,
+    total: payment.amount_total,
   };
 
   await fauna.query(
     q.Create(q.Collection('buys'), { data: paymentIntentData }),
   );
-
-
 }

@@ -50,7 +50,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             const checkoutSession = event.data.object as Stripe.Checkout.Session;
 
             await saveBuy(
-              checkoutSession.payment_intent.toString(),
+              checkoutSession.id.toString(),
               checkoutSession.customer.toString(),
             );
 

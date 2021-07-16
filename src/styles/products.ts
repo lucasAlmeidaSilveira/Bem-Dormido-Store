@@ -21,6 +21,30 @@ export const Container = styled.main`
     font-size: clamp(1.5rem, 2.4rem, 1.6rem);
   }
 
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    /* text-align: center; */
+    /* font-size: 18px; */
+    /* background: #fff; */
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
 `;
 
 export const BoxSlider = styled.section`
@@ -33,7 +57,6 @@ export const BoxSlider = styled.section`
   div.d-none {
     margin-right: 8.4rem;
   }
-
 `;
 
 export const ImageProduct = styled.div`
@@ -47,6 +70,9 @@ export const ImageProduct = styled.div`
 
   background: var(--blue);
   border-radius: 100%;
+  img {
+    /* height: 120%; */
+  }
 `;
 
 export const InfoProduct = styled.div`
@@ -76,12 +102,11 @@ export const InfoProduct = styled.div`
   }
 
   .amount {
-    /* display: inline-block; */
     display: flex;
     flex-direction: column;
 
     div {
-      width: 12.4rem;
+      width: fit-content;
       height: 5rem;
 
       display: flex;
@@ -221,44 +246,42 @@ export const InfoProduct = styled.div`
     }
   }
 
-  .addtional-info{
+  .addtional-info {
     width: 100%;
     padding: 1.2rem;
 
     background: var(--gray-20);
 
-    .order{
-      margin-bottom: 3.145rem;
+    div {
 
-      p{
+      & + div {
+        margin-top: 3.145rem;
+      }
+
+      p:first-of-type {
+        display: flex;
+        align-items: center;
+      }
+
+      p {
         font-family: 'Open sans', sans-serif;
         font-weight: 600;
         font-size: 1.5rem;
         color: var(--black);
-        
 
-        img{
-          margin-left: .925rem;
+        img {
+          margin-left: 0.925rem;
         }
 
-        & + p{
+        & + p {
           font-weight: 400;
 
-          color: var(--gray-90)
+          color: var(--gray-90);
         }
 
-        span{
+        span {
           font-weight: 600;
         }
-      }
-    }
-
-    .payment{
-      p{
-        font-family: 'Open sans', sans-serif;
-        font-weight: 600;
-        font-size: 1.5rem;
-        color: var(--black);
       }
     }
   }
@@ -277,12 +300,12 @@ export const Description = styled.article`
     flex-direction: column;
     padding: 1rem;
 
-    div + div{
+    div + div {
       margin-top: 4rem;
     }
 
-    img{
+    img {
       width: 100%;
     }
   }
-`
+`;
